@@ -1,0 +1,122 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/Splash/SplashDialog.gd" type="Script" id=1]
+[ext_resource path="res://assets/Splash/image.png" type="Texture" id=2]
+[ext_resource path="res://assets/themes/dark/theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/fonts/Roboto-Small.tres" type="DynamicFont" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.215686, 0.207843, 0.219608, 0.584314 )
+border_width_top = 38
+border_width_bottom = 26
+border_color = Color( 0.498039, 0.211765, 0.211765, 0.945098 )
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_top = 20.0
+
+[node name="SplashDialog" type="WindowDialog"]
+margin_right = 489.04
+margin_bottom = 557.0
+rect_min_size = Vector2( 575, 500 )
+theme = ExtResource( 3 )
+custom_styles/panel = SubResource( 1 )
+custom_constants/close_v_ofs = 13
+custom_constants/title_height = 10
+window_title = "Splash"
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Contents" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 68.0
+margin_top = 7.0
+margin_right = -68.0
+custom_constants/separation = 6
+alignment = 1
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Control" type="Control" parent="Contents"]
+margin_top = 3.0
+margin_right = 439.0
+margin_bottom = 409.0
+rect_min_size = Vector2( 0, 406 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="ColorRect" type="ColorRect" parent="Contents/Control"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -287.5
+margin_top = -194.5
+margin_right = 287.5
+margin_bottom = 194.5
+rect_min_size = Vector2( 0, 300 )
+color = Color( 0.266667, 0.266667, 0.266667, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="Contents/Control/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+ratio = 1.401
+stretch_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SplashArt" type="TextureRect" parent="Contents/Control/ColorRect/AspectRatioContainer"]
+margin_left = 15.0055
+margin_right = 559.995
+margin_bottom = 389.0
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Youtube" type="Button" parent="Contents"]
+margin_top = 415.0
+margin_right = 439.0
+margin_bottom = 446.0
+text = "Visit me on Youtube"
+
+[node name="Twitter" type="Button" parent="Contents"]
+margin_top = 452.0
+margin_right = 439.0
+margin_bottom = 483.0
+text = "Follow me on Twitter"
+
+[node name="Itch" type="Button" parent="Contents"]
+margin_top = 489.0
+margin_right = 439.0
+margin_bottom = 520.0
+text = "Follow itch.io"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CopyrightLabel" type="Label" parent="Contents"]
+margin_top = 526.0
+margin_right = 439.0
+margin_bottom = 547.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 7 )
+text = "©2021-present by Variable"
+align = 1
+
+[connection signal="about_to_show" from="." to="." method="_on_SplashDialog_about_to_show"]
+[connection signal="popup_hide" from="." to="." method="_on_SplashDialog_popup_hide"]
+[connection signal="pressed" from="Contents/Youtube" to="." method="_on_Youtube_pressed"]
+[connection signal="pressed" from="Contents/Twitter" to="." method="_on_Twitter_pressed"]
+[connection signal="pressed" from="Contents/Itch" to="." method="_on_Itch_pressed"]
