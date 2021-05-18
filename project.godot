@@ -20,7 +20,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="asset maker (ver 1.0)"
+config/name="Asset Maker (ver 1.1)"
 config/description="a block based 3d Moddler"
 run/main_scene="res://Startup.tscn"
 boot_splash/image="res://assets/Splash/boot up.png"
@@ -41,7 +41,7 @@ window/stretch/aspect="expand"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "SIsilicon.3d.text" )
+enabled=PoolStringArray( "res://addons/SIsilicon.3d.text/plugin.cfg" )
 
 [importer_defaults]
 
@@ -131,6 +131,16 @@ backward={
 save={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":81,"unicode":0,"echo":false,"script":null)
+ ]
+}
+undo={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
+ ]
+}
+redo={
+"deadzone": 0.5,
+"events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":true,"control":true,"meta":false,"command":true,"pressed":false,"scancode":90,"unicode":0,"echo":false,"script":null)
  ]
 }
 

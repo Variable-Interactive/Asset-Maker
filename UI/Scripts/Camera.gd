@@ -5,6 +5,9 @@ var mouse_delta :Vector2
 var sensitivity :float = 10
 
 func _process(delta):
+	if Global.hold:
+		return
+	
 	if Input.is_action_pressed("mouse drag"):
 		rotate_object_local(Vector3.RIGHT,deg2rad(mouse_delta.y * sensitivity * delta))
 		rotate_y(deg2rad(mouse_delta.x * sensitivity * delta))

@@ -13,7 +13,6 @@ func _process(_delta):
 	if Global.assist_mode:
 		if (global_transform.origin.distance_to(cursor.global_transform.origin)) <= 1.5:
 			if get_node_or_null("Node") == null:
-				print("placing")
 				var indicator = preload("res://Brushes/Basic/BrushPosition.tscn").instance()
 				add_child(indicator)
 				get_node("Node/Spatial").global_transform.origin = global_transform.origin
@@ -29,6 +28,6 @@ func _process(_delta):
 			look_dir.y = coordinates.global_transform.origin.y
 			coordinates.look_at(look_dir,Vector3.UP)
 			coordinates.visible = true
-		else:
-			if get_node_or_null("Node") != null:
-				get_node("Node").queue_free()
+	if (global_transform.origin.distance_to(cursor.global_transform.origin)) >= 1.5:
+		if get_node_or_null("Node") != null:
+			get_node("Node").queue_free()

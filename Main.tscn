@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://UI/Interface.tscn" type="PackedScene" id=2]
@@ -6,8 +6,6 @@
 [ext_resource path="res://UI/Scripts/Camera.gd" type="Script" id=5]
 [ext_resource path="res://shaders/cursor.tres" type="Material" id=7]
 [ext_resource path="res://shaders/layer.tres" type="Material" id=9]
-[ext_resource path="res://Brushes/textures/textures_1.png" type="Texture" id=22]
-[ext_resource path="res://Brushes/Basic/brush.tscn" type="PackedScene" id=23]
 [ext_resource path="res://UI/Scripts/CSGCombiner.gd" type="Script" id=24]
 
 [sub_resource type="CubeMesh" id=1]
@@ -17,11 +15,6 @@ size = Vector3( 100, 0.1, 100 )
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 50, 0, 50 )
-
-[sub_resource type="CubeMesh" id=4]
-
-[sub_resource type="SpatialMaterial" id=5]
-albedo_texture = ExtResource( 22 )
 
 [node name="Main" type="Spatial"]
 script = ExtResource( 1 )
@@ -49,7 +42,7 @@ material/0 = ExtResource( 9 )
 shape = SubResource( 3 )
 
 [node name="Camera" type="Camera" parent="."]
-transform = Transform( 0.771092, 0.313093, -0.554428, 0, 0.870751, 0.491725, 0.636724, -0.379165, 0.671429, -8.874, 7.745, 7.981 )
+transform = Transform( -0.766045, -0.31163, 0.562195, 0, 0.87462, 0.48481, -0.642788, 0.371386, -0.669998, 9, 7.745, -8 )
 cull_mask = 524287
 current = true
 fov = 67.0
@@ -63,10 +56,6 @@ __meta__ = {
 
 [node name="CSGCombiner" type="CSGCombiner" parent="."]
 script = ExtResource( 24 )
-
-[node name="brush" parent="CSGCombiner" instance=ExtResource( 23 )]
-mesh = SubResource( 4 )
-material = SubResource( 5 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

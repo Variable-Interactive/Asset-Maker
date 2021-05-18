@@ -98,12 +98,6 @@ func set_text(value: String) -> void:
 		
 		size = label.rect_size
 		viewport.size = size
-		
-		yield(get_tree(), "idle_frame")
-		viewport.render_target_update_mode = Viewport.UPDATE_DISABLED
-		
-		proxy.scale.x = size.x * text_size / 200.0
-		proxy.scale.y = size.y * text_size / 200.0
 
 
 func set_text_size(value: float) -> void:

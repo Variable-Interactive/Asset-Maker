@@ -5,7 +5,7 @@
 [ext_resource path="res://assets/icons/icon.png" type="Texture" id=4]
 [ext_resource path="res://assets/icons/monogram transparent.png" type="Texture" id=5]
 [ext_resource path="res://UI/Scripts/Interface.gd" type="Script" id=9]
-[ext_resource path="res://Brushes/textures/textures_1.png" type="Texture" id=10]
+[ext_resource path="res://Brushes/Basic/textures_1.png" type="Texture" id=10]
 [ext_resource path="res://assets/icons/move.png" type="Texture" id=11]
 [ext_resource path="res://assets/icons/shift.png" type="Texture" id=13]
 [ext_resource path="res://assets/themes/dark/theme.tres" type="Theme" id=14]
@@ -103,7 +103,7 @@ margin_bottom = 31.0
 focus_mode = 2
 text = "Help"
 flat = false
-items = [ "Help", null, 0, false, false, 0, 0, null, "", false ]
+items = [ "Help", null, 0, false, false, 0, 0, null, "", false, "Issue Tracker", null, 0, false, false, 1, 0, null, "", false ]
 
 [node name="transf options" type="Panel" parent="VBoxContainer"]
 margin_top = 40.0
@@ -420,7 +420,7 @@ margin_right = 126.0
 margin_bottom = 74.0
 text = "Draw"
 align = 1
-items = [ "Draw", null, false, 0, null, "Erase", null, false, 1, null, "Dropper", null, false, 2, null ]
+items = [ "Draw", null, false, 0, null, "Erase", null, false, 1, null, "Dropper", null, false, 2, null, "Paint", null, false, 3, null ]
 selected = 0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -699,7 +699,23 @@ margin_right = 58.5
 margin_bottom = 37.0
 text = "= Place/Erase blocks"
 
-[node name="ExportDialog" type="FileDialog" parent="."]
+[node name="SplashRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SplashDialog" parent="SplashRect" instance=ExtResource( 27 )]
+
+[node name="Dialogs" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportDialog" type="FileDialog" parent="Dialogs"]
 margin_left = 136.955
 margin_top = 107.591
 margin_right = 872.955
@@ -707,14 +723,14 @@ margin_bottom = 530.591
 window_title = "Select Export Path"
 mode_overrides_title = false
 access = 2
-current_dir = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master"
-current_path = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master/"
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
 __meta__ = {
 "_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="SaveDialog" type="FileDialog" parent="."]
+[node name="SaveDialog" type="FileDialog" parent="Dialogs"]
 margin_left = 136.955
 margin_top = 107.591
 margin_right = 872.955
@@ -722,31 +738,68 @@ margin_bottom = 530.591
 mode_overrides_title = false
 access = 2
 filters = PoolStringArray( "*.asset" )
-current_dir = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master"
-current_path = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master/"
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="NewTexture" type="FileDialog" parent="."]
+[node name="NewTexture" type="FileDialog" parent="Dialogs"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -354.0
-margin_top = -242.0
-margin_right = 354.0
-margin_bottom = 240.0
+margin_left = 240.0
+margin_top = 98.0
+margin_right = 948.0
+margin_bottom = 580.0
 window_title = "New Texture"
 dialog_text = "It is advised to use an image of (1023x1024) as a texture"
 mode_overrides_title = false
 mode = 0
 access = 2
 filters = PoolStringArray( "*.png" )
-current_dir = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master"
-current_path = "/home/variable/Documents/Godot/Godot projects/Asset-Maker-master/"
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
 
-[node name="HelpMenu" type="WindowDialog" parent="."]
+[node name="Alert" type="AcceptDialog" parent="Dialogs"]
+margin_right = 468.0
+margin_bottom = 162.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Dialogs/Alert"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -47.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Control" type="ScrollContainer" parent="Dialogs/Alert/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Dialogs/Alert/Panel/Control"]
+margin_top = 38.0
+margin_right = 452.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HelpMenu" type="WindowDialog" parent="Dialogs"]
 margin_left = 353.235
 margin_top = 115.01
 margin_right = 1130.23
@@ -757,7 +810,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HelpMenu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogs/HelpMenu"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 9.0
@@ -766,71 +819,144 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HelpMenu/VBoxContainer"]
+[node name="Label" type="Label" parent="Dialogs/HelpMenu/VBoxContainer"]
 margin_right = 757.0
 margin_bottom = 48.0
 custom_fonts/font = ExtResource( 18 )
 custom_colors/font_color = Color( 0.396078, 0.733333, 0.482353, 1 )
-text = "Asset Maker (ver 1.0)"
+text = "Asset Maker (ver 1.1)"
 align = 1
 
-[node name="RichTextLabel" type="RichTextLabel" parent="HelpMenu/VBoxContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogs/HelpMenu/VBoxContainer"]
 margin_top = 52.0
 margin_right = 757.0
 margin_bottom = 490.0
 size_flags_vertical = 3
 custom_fonts/normal_font = ExtResource( 25 )
 custom_colors/default_color = Color( 0.341176, 0.843137, 0.227451, 1 )
-text = "
-Made by :	\"Variable\"
+bbcode_enabled = true
+bbcode_text = "
+Made by :	[color=blue]\"Variable\"[/color]
 
-Changes/Additions:
-	1.	Some bug fixes, decreased camera sensitivity
-	2.	You can now use your own Textures. The texture should be a (1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3 columns) an example texture is given with the software.
+Changes/Additions since version 1.0:		[color=white]
+[indent]1.	Some bug fixes [color=grey](usual)[/color][/indent]
+[indent]2.	Added alert panels [color=yellow](New)[/color][/indent]
+[indent]3.	An option in help menu to post an Issue [color=yellow](New)[/color][/indent]
+[indent]4.	Added undo/redo [color=yellow](New)[/color][/indent]
+[indent]5.	Added a new \"Paint\" tool [color=yellow](New)[/color][/indent]
+[indent]6.	Added some minecraft textures [color=fuchsia](since ver: 1.0)[/color][/indent]
+[indent]7.	You can now use your own Textures. The texture should be a 
+		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
+		 columns) an example texture is given with the software. [color=fuchsia](since ver: 1.0)[/color][/indent] [/color]
 
-Instructions:
+Instructions:	[color=white]
 	This program is a block based 3d modeler for creating simple assets, It is made using Godot and at the moment, comes with the following tools:
 		1.	Draw tool
 		2.	Erase tool
 		3.	Dropper
+		4.	Paint[/color]
+	
+Navigation:[color=white]
+	You can navigate in the 3d view by using:
+	1.	Arrow keys to move (Simple movement)
+	2.	Shift + Arrow keys to rotate and move (Left-Right to rotate, Up-Down to
+			move camera up or down)
+	3.	Right Mouse Button to rotate camera.[/color]
+	
+Floor/Layers:[color=white]
+	value (-1 to 100)
+	The value of Floor/Layer determines the height of placement of block
+	using shortcut key (Page Up,Page Down) you can increase or decrease
+	the layer by \"1\" (if you want more precision, you can manually set it in its
+	field box, there you can set it as a multiple of \"0.1\"[/color]
+
+	
+Tools:[color=white]
+	You can set them in the \"Options tab\"[/color]
+	
+1.	Draw Tool:[color=white]
+		It will place a block where your Cursor is currently at. It will also remove a
+		block if there is already a block there (one click for one block)[/color]
+
+2.	Eraser Tool:[color=white]
+		While pressing the Left Mouse Button, it will start erasing the blocks.
+		(The Cursor should be placed in the same layer as the blocks you which
+		to erase.[/color]
+		
+3.	Dropper Tool:[color=white]
+		If a block is already placed at the cursor position then the block material
+		will be copied, else a new block will be created (one click for one block)[/color]
+
+3.	Paint Tool:[color=white]
+		If a block is present at cursor position, it will be painted according to the
+		color and texture selected [color=silver](experimental)[/color][/color]
+
+Scaling/Rotating the brush:[color=white]
+	Furthermore, you can Scale (0.1 - 1.0) and Rotate(0 - 360 degrees) in the \"Options tab\".[/color]
+[color=aqua]
+[center]For better understanding, i have also included some examples with this program. I hope that this program or the examples will be of some use.[center]
+"
+text = "
+Made by :	\"Variable\"
+
+Changes/Additions since version 1.0:		
+	1.	Some bug fixes (usual)
+	2.	Added alert panels (New)
+	3.	An option in help menu to post an Issue (New)
+	4.	Added undo/redo (New)
+	5.	Added a new \"Paint\" tool (New)
+	6.	Added some minecraft textures (since ver: 1.0)
+	7.	You can now use your own Textures. The texture should be a 
+		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
+		 columns) an example texture is given with the software. (since ver: 1.0) 
+
+Instructions:	
+	This program is a block based 3d modeler for creating simple assets, It is made using Godot and at the moment, comes with the following tools:
+		1.	Draw tool
+		2.	Erase tool
+		3.	Dropper
+		4.	Paint
 	
 Navigation:
 	You can navigate in the 3d view by using:
 	1.	Arrow keys to move (Simple movement)
-	2.	Shift + Arrow keys to rotate and move (Left-Right to rotate, Up-Down to move camera up or down)
+	2.	Shift + Arrow keys to rotate and move (Left-Right to rotate, Up-Down to
+			move camera up or down)
 	3.	Right Mouse Button to rotate camera.
 	
 Floor/Layers:
 	value (-1 to 100)
-	The value of Floor/Layer determines the height of placement of block using shortcut key (Page Up,Page Down) you can increase or decrease the layer by \"1\" (if you want more precision, you can manually set it in its field box, there you can set it as a multiple of \"0.1\"
+	The value of Floor/Layer determines the height of placement of block
+	using shortcut key (Page Up,Page Down) you can increase or decrease
+	the layer by \"1\" (if you want more precision, you can manually set it in its
+	field box, there you can set it as a multiple of \"0.1\"
 
 	
 Tools:
 	You can set them in the \"Options tab\"
 	
 1.	Draw Tool:
-		It will place a block where your Cursor is currently at. It will also remove a block if there is already a block there (one click for one block)
+		It will place a block where your Cursor is currently at. It will also remove a
+		block if there is already a block there (one click for one block)
 
 2.	Eraser Tool:
-		While pressing the Left Mouse Button, it will start erasing the blocks. (The Cursor should be placed in the same layer as the blocks you which to erase
+		While pressing the Left Mouse Button, it will start erasing the blocks.
+		(The Cursor should be placed in the same layer as the blocks you which
+		to erase.
 		
 3.	Dropper Tool:
-		If a block is already placed at the cursor position then the block material will be copied, else a new block will be created (one click for one block)
+		If a block is already placed at the cursor position then the block material
+		will be copied, else a new block will be created (one click for one block)
+
+3.	Paint Tool:
+		If a block is present at cursor position, it will be painted according to the
+		color and texture selected (experimental)
 
 Scaling/Rotating the brush:
 	Furthermore, you can Scale (0.1 - 1.0) and Rotate(0 - 360 degrees) in the \"Options tab\".
 
-For better understanding, i have also included some examples with this program. I hope that this program or the examples will be of some use."
-
-[node name="SplashRect" type="ColorRect" parent="."]
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 0.556863 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="SplashDialog" parent="SplashRect" instance=ExtResource( 27 )]
+For better understanding, i have also included some examples with this program. I hope that this program or the examples will be of some use.
+"
 
 [connection signal="value_changed" from="VBoxContainer/transf options/button container/Snap/snap" to="." method="_on_snap_value_changed"]
 [connection signal="value_changed" from="VBoxContainer/transf options/button container/layer/layer" to="." method="_on_layer_value_changed"]
@@ -846,4 +972,4 @@ __meta__ = {
 [connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label3/rotate z" to="." method="_on_rotate_z_value_changed"]
 [connection signal="mouse_entered" from="VBoxContainer/down/Drawable area" to="." method="_on_Drawable_area_mouse_entered"]
 [connection signal="mouse_exited" from="VBoxContainer/down/Drawable area" to="." method="_on_Drawable_area_mouse_exited"]
-[connection signal="file_selected" from="NewTexture" to="." method="_on_NewTexture_file_selected"]
+[connection signal="file_selected" from="Dialogs/NewTexture" to="." method="_on_NewTexture_file_selected"]

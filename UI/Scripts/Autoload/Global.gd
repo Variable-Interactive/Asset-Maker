@@ -9,8 +9,24 @@ var paint_color :Color
 var paint_texture :Texture
 var mode = "Draw"
 
-######### path manipulation functions
+var alert_dialog :AcceptDialog
+var prog_dialog :Popup
 
+var hold = true # controls pausing of editor
+
+func pop_error(var text:String, var code: String):
+	alert_dialog.window_title = "Error..."
+	alert_dialog.get_node("Panel/Control/Label").text = str(text, "\n Code: ", code).c_unescape()
+	alert_dialog.popup_centered()
+
+
+func pop_success(var text:String):
+	alert_dialog.window_title = "Success!!!"
+	alert_dialog.get_node("Panel/Control/Label").text = str(text).c_unescape()
+	alert_dialog.popup_centered()
+
+
+######### path manipulation functions
 # it is a function that returns array of paths to all the nodes inside a parent
 func get_paths_in_node(parent :Node,local = false):
 	var paths :Array = []

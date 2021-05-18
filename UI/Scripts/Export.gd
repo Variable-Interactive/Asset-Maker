@@ -1,5 +1,8 @@
 extends MenuButton
 
+# i took the code from "https://github.com/henriquelalves/GodotCSGExporter" and made some additions
+
+
 enum EXPORT_TYPE {OBJ}
 
 signal finished_exporting

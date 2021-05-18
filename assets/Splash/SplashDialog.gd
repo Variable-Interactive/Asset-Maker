@@ -3,7 +3,7 @@ extends WindowDialog
 
 
 func _on_SplashDialog_about_to_show() -> void:
-	window_title = "Asset Maker (ver 1.0)"
+	window_title = "Asset Maker (ver 1.1)"
 	rect_position = (get_parent().rect_size/2) - (rect_size/2)
 	get_parent().visible = true
 

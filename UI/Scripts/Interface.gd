@@ -2,38 +2,40 @@ extends Control
 
 #mechanism for pausing mouse if it goes outside the "Drawable area"
 
-var hold = true
 onready var Main = Global.find_node_by_name(self, "Main")
 onready var texture_container = Global.find_node_by_name(self, "Textures")
 
-onready var save_dialog :FileDialog = get_node("SaveDialog")
-onready var menu_buttons = get_node("VBoxContainer/top/ButtonContainer")
+onready var menu_buttons = Global.find_node_by_name(self, "ButtonContainer")
+onready var save_dialog :FileDialog = Global.find_node_by_name(self, "SaveDialog")
+onready var alert_dialog :AcceptDialog = Global.find_node_by_name(self, "Alert")
+
 
 var block_textures = [
-	"res://Brushes/textures/Coat.png",
-	"res://Brushes/textures/Dirt.png",
-	"res://Brushes/textures/Glass.png",
-	"res://Brushes/textures/Gold.png",
-	"res://Brushes/textures/Redstone.png",
-	"res://Brushes/textures/Sand.png",
-	"res://Brushes/textures/Stone.png",
-	"res://Brushes/textures/textures_1.png",
-	"res://Brushes/textures/textures_2.png",
-	"res://Brushes/textures/textures_3.png",
-	"res://Brushes/textures/textures_4.png",
-	"res://Brushes/textures/textures_5.png",
-	"res://Brushes/textures/Wood.png"
+	"res://Brushes/Basic/Coat.png",
+	"res://Brushes/Basic/Dirt.png",
+	"res://Brushes/Basic/Glass.png",
+	"res://Brushes/Basic/Gold.png",
+	"res://Brushes/Basic/Redstone.png",
+	"res://Brushes/Basic/Sand.png",
+	"res://Brushes/Basic/Stone.png",
+	"res://Brushes/Basic/textures_1.png",
+	"res://Brushes/Basic/textures_2.png",
+	"res://Brushes/Basic/textures_3.png",
+	"res://Brushes/Basic/textures_4.png",
+	"res://Brushes/Basic/textures_5.png",
+	"res://Brushes/Basic/Wood.png"
 ]
-
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Global.alert_dialog = alert_dialog
 	start_texture_tab()
 	for butts in texture_container.get_children():
 		butts.connect("button_texture",self,"set_texture")
 	menu_buttons.get_node("File").get_popup().connect("index_pressed", self, "file_menu")
 	menu_buttons.get_node("Help").get_popup().connect("index_pressed", self, "Help_menu")
+
 
 func start_texture_tab():
 	for img in block_textures:
@@ -43,11 +45,11 @@ func start_texture_tab():
 
 
 func _on_Drawable_area_mouse_entered():
-	hold = false
+	Global.hold = false
 
 
 func _on_Drawable_area_mouse_exited():
-	hold = true
+	Global.hold = true
 
 
 func _on_AssistMode_toggled(button_pressed):
@@ -112,16 +114,21 @@ func file_menu(id :int):
 
 func Help_menu(id :int):
 	if id == 0:
-		get_node("HelpMenu").popup_centered()
+		get_node("Dialogs/HelpMenu").popup_centered()
+	elif id == 1:
+		var _err = OS.shell_open("https://github.com/Variable-ind/Asset-Maker/issues")
 
 
 func _on_Mode_item_selected(index):
 	if index == 0:
 		Global.mode = "Draw"
-	if index == 1:
+	elif index == 1:
 		Global.mode = "Erase"
-	if index == 2:
+	elif index == 2:
 		Global.mode = "Dropper"
+	elif index == 3:
+		Global.mode = "Paint"
+		get_node("VBoxContainer/down/Panel/TabContainer").current_tab = 1
 
 
 func _on_scale_x_value_changed(value):
