@@ -1,0 +1,1 @@
+If the textures are not bieng shown in "Blender" then enable viewport shading as shown in "View Me.png"
