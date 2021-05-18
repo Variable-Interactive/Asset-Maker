@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Startup.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/monogram transparent.png" type="Texture" id=2]
+[ext_resource path="res://assets/audio/boot_up.ogg" type="AudioStream" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "startup"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("TextureRect:rect_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1015, 0 ), Vector2( 1015, 328 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("TextureRect:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 106.5, 360 ), Vector2( 106.5, 196 ) ]
+}
+
+[node name="Startup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0784314, 0.0784314, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/startup = SubResource( 1 )
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 180.0
+margin_top = 360.0
+margin_right = -107.0
+margin_bottom = -360.0
+texture = ExtResource( 2 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+autoplay = true
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]

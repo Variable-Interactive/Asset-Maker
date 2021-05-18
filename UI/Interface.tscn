@@ -1,0 +1,975 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://UI/Scripts/Texture button/TextureButton.gd" type="Script" id=1]
+[ext_resource path="res://assets/icons/right mouse.png" type="Texture" id=3]
+[ext_resource path="res://assets/icons/icon.png" type="Texture" id=4]
+[ext_resource path="res://assets/icons/monogram transparent.png" type="Texture" id=5]
+[ext_resource path="res://UI/Scripts/Interface.gd" type="Script" id=9]
+[ext_resource path="res://Brushes/Basic/textures_1.png" type="Texture" id=10]
+[ext_resource path="res://assets/icons/move.png" type="Texture" id=11]
+[ext_resource path="res://assets/icons/shift.png" type="Texture" id=13]
+[ext_resource path="res://assets/themes/dark/theme.tres" type="Theme" id=14]
+[ext_resource path="res://assets/icons/arrow.png" type="Texture" id=17]
+[ext_resource path="res://assets/fonts/Roboto-Bold.tres" type="DynamicFont" id=18]
+[ext_resource path="res://UI/Scripts/layer.gd" type="Script" id=20]
+[ext_resource path="res://assets/icons/left mouse.png" type="Texture" id=24]
+[ext_resource path="res://assets/fonts/Roboto-Italic.tres" type="DynamicFont" id=25]
+[ext_resource path="res://assets/Splash/SplashDialog.tscn" type="PackedScene" id=27]
+[ext_resource path="res://assets/icons/layers.png" type="Texture" id=28]
+[ext_resource path="res://UI/Scripts/Export.gd" type="Script" id=29]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.0509804, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.172549, 0.172549, 0.172549, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0705882, 0.0705882, 0.0705882, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[node name="Interface" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 14 )
+script = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="top" type="Panel" parent="VBoxContainer"]
+margin_right = 1228.0
+margin_bottom = 40.0
+rect_min_size = Vector2( 0, 40 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBoxContainer/top"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 6.0
+margin_top = 4.0
+margin_bottom = -5.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="File" type="MenuButton" parent="VBoxContainer/top/ButtonContainer"]
+margin_right = 95.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "File menu"
+flat = false
+items = [ "New File", null, 0, false, false, 0, 0, null, "", false, "Save project (.asset)", null, 0, false, false, 2, 0, null, "", false, "load project (.asset)", null, 0, false, false, 3, 0, null, "", false, "Exit", null, 0, false, false, 3, 0, null, "", false ]
+
+[node name="MenuButton" type="MenuButton" parent="VBoxContainer/top/ButtonContainer"]
+margin_left = 99.0
+margin_right = 217.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "Export Mesh"
+flat = false
+items = [ "Export Wavefront (.obj)", null, 0, false, false, 0, 0, null, "", false ]
+script = ExtResource( 29 )
+Csg_combiner_node_path = NodePath("../../../../../../CSGCombiner")
+
+[node name="Help" type="MenuButton" parent="VBoxContainer/top/ButtonContainer"]
+margin_left = 221.0
+margin_right = 273.0
+margin_bottom = 31.0
+focus_mode = 2
+text = "Help"
+flat = false
+items = [ "Help", null, 0, false, false, 0, 0, null, "", false, "Issue Tracker", null, 0, false, false, 1, 0, null, "", false ]
+
+[node name="transf options" type="Panel" parent="VBoxContainer"]
+margin_top = 40.0
+margin_right = 1228.0
+margin_bottom = 85.0
+rect_min_size = Vector2( 0, 45 )
+size_flags_horizontal = 3
+custom_styles/panel = SubResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button container" type="HBoxContainer" parent="VBoxContainer/transf options"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -871.0
+margin_top = -17.5
+margin_bottom = 17.5
+custom_constants/separation = 148
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Snap" type="TextureRect" parent="VBoxContainer/transf options/button container"]
+margin_right = 35.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 0 )
+hint_tooltip = "Snapping"
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="snap" type="SpinBox" parent="VBoxContainer/transf options/button container/Snap"]
+margin_left = 43.1996
+margin_right = 131.2
+margin_bottom = 35.0
+min_value = 0.1
+step = 0.1
+value = 2.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layer" type="TextureRect" parent="VBoxContainer/transf options/button container"]
+margin_left = 183.0
+margin_right = 218.0
+margin_bottom = 35.0
+rect_min_size = Vector2( 35, 0 )
+hint_tooltip = "Floor/Layer:-
+Page Up : Increase layer
+Page Down : Decrease layer"
+texture = ExtResource( 28 )
+expand = true
+script = ExtResource( 20 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="layer" type="SpinBox" parent="VBoxContainer/transf options/button container/layer"]
+margin_left = 43.1996
+margin_right = 131.2
+margin_bottom = 35.0
+min_value = -1.0
+step = 0.1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Status" type="Label" parent="VBoxContainer/transf options/button container"]
+margin_left = 366.0
+margin_top = 2.0
+margin_right = 871.0
+margin_bottom = 33.0
+size_flags_horizontal = 3
+
+[node name="down" type="HBoxContainer" parent="VBoxContainer"]
+margin_top = 85.0
+margin_right = 1228.0
+margin_bottom = 670.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/down"]
+margin_right = 255.0
+margin_bottom = 585.0
+rect_min_size = Vector2( 255, 0 )
+custom_styles/panel = SubResource( 3 )
+
+[node name="TabContainer" type="TabContainer" parent="VBoxContainer/down/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 2.0
+margin_top = 13.0
+margin_right = -2.00002
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="Panel" parent="VBoxContainer/down/Panel/TabContainer"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 38.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/down/Panel/TabContainer/Main"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -115.0
+margin_top = -71.0
+margin_right = 115.0
+texture = ExtResource( 5 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/down/Panel/TabContainer/Main"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -105.0
+margin_top = -181.086
+margin_right = 106.0
+margin_bottom = 29.9141
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Main/TextureRect2"]
+margin_left = 52.0271
+margin_top = 230.977
+margin_right = 166.027
+margin_bottom = 287.977
+text = "Asset Maker
+(ver 1.0)"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AssistMode" type="CheckButton" parent="VBoxContainer/down/Panel/TabContainer/Main"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -108.0
+margin_top = 14.9831
+margin_right = 108.0
+margin_bottom = 54.9831
+custom_colors/font_color = Color( 0.839216, 0.305882, 0.305882, 1 )
+text = "Position assist :"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Color" type="Panel" parent="VBoxContainer/down/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 38.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="CurrentColor" type="ColorPickerButton" parent="VBoxContainer/down/Panel/TabContainer/Color"]
+margin_left = 108.546
+margin_top = 39.58
+margin_right = 232.546
+margin_bottom = 66.58
+color = Color( 0.996078, 0.988235, 0.988235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Color/CurrentColor"]
+margin_left = -74.5661
+margin_top = -1.88776
+margin_right = -11.5661
+margin_bottom = 29.1122
+text = "Color :"
+
+[node name="CurrentTexture" type="TextureRect" parent="VBoxContainer/down/Panel/TabContainer/Color"]
+margin_left = 122.0
+margin_top = 86.132
+margin_right = 188.0
+margin_bottom = 150.132
+texture = ExtResource( 10 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Color/CurrentTexture"]
+margin_left = -99.1218
+margin_top = 14.487
+margin_right = -19.1218
+margin_bottom = 45.487
+text = "Texture :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/down/Panel/TabContainer/Color"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_top = 159.0
+margin_right = -1.99998
+margin_bottom = -45.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer"]
+margin_right = 230.0
+margin_bottom = 290.0
+rect_min_size = Vector2( 225, 125 )
+size_flags_vertical = 3
+custom_styles/bg = SubResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Textures" type="GridContainer" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer/ScrollContainer"]
+margin_right = 66.0
+margin_bottom = 66.0
+columns = 3
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="None" type="TextureButton" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer/ScrollContainer/Textures"]
+margin_right = 66.0
+margin_bottom = 66.0
+rect_min_size = Vector2( 66, 66 )
+expand = true
+script = ExtResource( 1 )
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer/ScrollContainer/Textures/None"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+text = "None"
+align = 1
+valign = 1
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CreateNew" type="Button" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer"]
+margin_top = 294.0
+margin_right = 230.0
+margin_bottom = 325.0
+text = "Load New"
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer"]
+visible = false
+margin_top = 164.0
+margin_right = 229.0
+margin_bottom = 325.0
+text = "It is advised to use an image of (1023x1024) as a texture
+A base UV texture is provided with the software. "
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Options" type="Panel" parent="VBoxContainer/down/Panel/TabContainer"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 38.0
+margin_right = -5.0
+margin_bottom = -5.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Mode" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options"]
+margin_left = 56.2039
+margin_top = 12.132
+margin_right = 176.204
+margin_bottom = 43.132
+text = "Brush Mode :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Mode" type="OptionButton" parent="VBoxContainer/down/Panel/TabContainer/Options/Mode"]
+margin_left = -5.0
+margin_top = 43.0
+margin_right = 126.0
+margin_bottom = 74.0
+text = "Draw"
+align = 1
+items = [ "Draw", null, false, 0, null, "Erase", null, false, 1, null, "Dropper", null, false, 2, null, "Paint", null, false, 3, null ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scale" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options"]
+margin_left = -1.05946
+margin_top = 101.49
+margin_right = 62.9405
+margin_bottom = 132.49
+custom_colors/font_color = Color( 0.780392, 0.780392, 0.780392, 1 )
+text = "Scale :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale"]
+margin_left = 41.2039
+margin_top = 38.591
+margin_right = 61.2039
+margin_bottom = 69.591
+custom_colors/font_color = Color( 0.898039, 0, 0, 1 )
+text = "X :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scale x" type="SpinBox" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label"]
+margin_left = 76.4762
+margin_top = 2.409
+margin_right = 164.476
+margin_bottom = 33.409
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale"]
+margin_left = 41.2039
+margin_top = 82.3176
+margin_right = 71.2039
+margin_bottom = 113.318
+custom_colors/font_color = Color( 0.156863, 0.847059, 0.0352941, 1 )
+text = "Y :"
+
+[node name="scale y" type="SpinBox" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label2"]
+margin_left = 76.4762
+margin_top = 2.409
+margin_right = 164.476
+margin_bottom = 33.409
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Label3" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale"]
+margin_left = 41.2039
+margin_top = 124.362
+margin_right = 71.2039
+margin_bottom = 155.362
+custom_colors/font_color = Color( 0.0705882, 0.121569, 0.843137, 1 )
+text = "Z :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="scale z" type="SpinBox" parent="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label3"]
+margin_left = 76.4762
+margin_top = 2.409
+margin_right = 164.476
+margin_bottom = 33.409
+min_value = 0.1
+max_value = 1.0
+step = 0.1
+value = 1.0
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Rotate" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options"]
+margin_top = 267.285
+margin_right = 89.0
+margin_bottom = 298.285
+custom_colors/font_color = Color( 0.815686, 0.858824, 0.823529, 1 )
+text = "Rotation :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate"]
+margin_left = 41.2039
+margin_top = 38.591
+margin_right = 61.2039
+margin_bottom = 69.591
+custom_colors/font_color = Color( 0.898039, 0, 0, 1 )
+text = "X :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rotate x" type="HSlider" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label"]
+margin_left = 47.7961
+margin_right = 165.796
+margin_bottom = 31.0
+max_value = 360.0
+step = 0.1
+value = 1.0
+rounded = true
+
+[node name="Label2" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate"]
+margin_left = 41.2039
+margin_top = 61.5521
+margin_right = 71.2039
+margin_bottom = 92.5521
+custom_colors/font_color = Color( 0.156863, 0.847059, 0.0352941, 1 )
+text = "Y :"
+
+[node name="rotate y" type="HSlider" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label2"]
+margin_left = 48.0
+margin_top = 2.0
+margin_right = 166.0
+margin_bottom = 33.0
+max_value = 360.0
+step = 0.1
+value = 1.0
+
+[node name="Label3" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate"]
+margin_left = 41.2039
+margin_top = 86.3628
+margin_right = 71.2039
+margin_bottom = 117.363
+custom_colors/font_color = Color( 0.0705882, 0.121569, 0.843137, 1 )
+text = "Z :"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="rotate z" type="HSlider" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label3"]
+margin_left = 48.7961
+margin_top = 2.409
+margin_right = 166.796
+margin_bottom = 33.409
+max_value = 360.0
+step = 0.1
+value = 1.0
+
+[node name="RotationStatus" type="Label" parent="VBoxContainer/down/Panel/TabContainer/Options/Rotate"]
+margin_left = 33.9799
+margin_top = 116.306
+margin_right = 209.98
+margin_bottom = 147.306
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Drawable area" type="Panel" parent="VBoxContainer/down"]
+margin_left = 259.0
+margin_right = 1228.0
+margin_bottom = 585.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 5 )
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+margin_top = 670.0
+margin_right = 1228.0
+margin_bottom = 720.0
+rect_min_size = Vector2( 0, 50 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Panel"]
+margin_left = 252.999
+margin_top = 3.68768
+margin_right = 292.999
+margin_bottom = 43.6877
+texture = ExtResource( 3 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/TextureRect2"]
+margin_left = 55.2981
+margin_top = 3.56757
+margin_right = 80.2981
+margin_bottom = 34.5676
+text = "OR"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/Panel/TextureRect2/Label"]
+margin_left = 54.1089
+margin_top = 4.7569
+margin_right = 94.1089
+margin_bottom = 30.7569
+texture = ExtResource( 13 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/TextureRect2/Label/TextureRect3"]
+margin_left = 49.265
+margin_right = 68.265
+margin_bottom = 31.0
+text = "+"
+
+[node name="TextureRect2" type="TextureRect" parent="VBoxContainer/Panel/TextureRect2/Label/TextureRect3/Label"]
+margin_left = 30.0323
+margin_top = -10.8216
+margin_right = 84.0323
+margin_bottom = 34.1784
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/TextureRect2/Label/TextureRect3/Label/TextureRect2"]
+margin_left = 65.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 39.0
+text = "= Camera Controlls"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Panel"]
+margin_left = 33.0356
+margin_top = 1.98425
+margin_right = 87.0356
+margin_bottom = 46.9843
+texture = ExtResource( 17 )
+expand = true
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/TextureRect"]
+margin_left = 65.0
+margin_top = 8.0
+margin_right = 148.0
+margin_bottom = 39.0
+text = "= Move "
+
+[node name="TextureRect3" type="TextureRect" parent="VBoxContainer/Panel"]
+margin_left = 754.631
+margin_top = 3.57166
+margin_right = 794.631
+margin_bottom = 43.5717
+texture = ExtResource( 24 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/TextureRect3"]
+margin_left = 40.5
+margin_top = 6.0
+margin_right = 58.5
+margin_bottom = 37.0
+text = "= Place/Erase blocks"
+
+[node name="SplashRect" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.556863 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SplashDialog" parent="SplashRect" instance=ExtResource( 27 )]
+
+[node name="Dialogs" type="Control" parent="."]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ExportDialog" type="FileDialog" parent="Dialogs"]
+margin_left = 136.955
+margin_top = 107.591
+margin_right = 872.955
+margin_bottom = 530.591
+window_title = "Select Export Path"
+mode_overrides_title = false
+access = 2
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="SaveDialog" type="FileDialog" parent="Dialogs"]
+margin_left = 136.955
+margin_top = 107.591
+margin_right = 872.955
+margin_bottom = 530.591
+mode_overrides_title = false
+access = 2
+filters = PoolStringArray( "*.asset" )
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="NewTexture" type="FileDialog" parent="Dialogs"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 240.0
+margin_top = 98.0
+margin_right = 948.0
+margin_bottom = 580.0
+window_title = "New Texture"
+dialog_text = "It is advised to use an image of (1023x1024) as a texture"
+mode_overrides_title = false
+mode = 0
+access = 2
+filters = PoolStringArray( "*.png" )
+current_dir = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1"
+current_path = "/home/variable/Documents/Godot/Godot projects/asset maker 1.1/"
+
+[node name="Alert" type="AcceptDialog" parent="Dialogs"]
+margin_right = 468.0
+margin_bottom = 162.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="Dialogs/Alert"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_top = 8.0
+margin_right = -8.0
+margin_bottom = -47.0
+rect_clip_content = true
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="Control" type="ScrollContainer" parent="Dialogs/Alert/Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Dialogs/Alert/Panel/Control"]
+margin_top = 38.0
+margin_right = 452.0
+margin_bottom = 69.0
+size_flags_horizontal = 3
+size_flags_vertical = 6
+align = 1
+valign = 1
+autowrap = true
+
+[node name="HelpMenu" type="WindowDialog" parent="Dialogs"]
+margin_left = 353.235
+margin_top = 115.01
+margin_right = 1130.23
+margin_bottom = 605.01
+window_title = "Help"
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Dialogs/HelpMenu"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 9.0
+margin_right = -10.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Dialogs/HelpMenu/VBoxContainer"]
+margin_right = 757.0
+margin_bottom = 48.0
+custom_fonts/font = ExtResource( 18 )
+custom_colors/font_color = Color( 0.396078, 0.733333, 0.482353, 1 )
+text = "Asset Maker (ver 1.1)"
+align = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Dialogs/HelpMenu/VBoxContainer"]
+margin_top = 52.0
+margin_right = 757.0
+margin_bottom = 490.0
+size_flags_vertical = 3
+custom_fonts/normal_font = ExtResource( 25 )
+custom_colors/default_color = Color( 0.341176, 0.843137, 0.227451, 1 )
+bbcode_enabled = true
+bbcode_text = "
+Made by :	[color=blue]\"Variable\"[/color]
+
+Changes/Additions since version 1.0:		[color=white]
+[indent]1.	Some bug fixes [color=grey](usual)[/color][/indent]
+[indent]2.	Added alert panels [color=yellow](New)[/color][/indent]
+[indent]3.	An option in help menu to post an Issue [color=yellow](New)[/color][/indent]
+[indent]4.	Added undo/redo [color=yellow](New)[/color][/indent]
+[indent]5.	Added a new \"Paint\" tool [color=yellow](New)[/color][/indent]
+[indent]6.	Added some minecraft textures [color=fuchsia](since ver: 1.0)[/color][/indent]
+[indent]7.	You can now use your own Textures. The texture should be a 
+		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
+		 columns) an example texture is given with the software. [color=fuchsia](since ver: 1.0)[/color][/indent] [/color]
+
+Instructions:	[color=white]
+	This program is a block based 3d modeler for creating simple assets, It is made using Godot and at the moment, comes with the following tools:
+		1.	Draw tool
+		2.	Erase tool
+		3.	Dropper
+		4.	Paint[/color]
+	
+Navigation:[color=white]
+	You can navigate in the 3d view by using:
+	1.	Arrow keys to move (Simple movement)
+	2.	Shift + Arrow keys to rotate and move (Left-Right to rotate, Up-Down to
+			move camera up or down)
+	3.	Right Mouse Button to rotate camera.[/color]
+	
+Floor/Layers:[color=white]
+	value (-1 to 100)
+	The value of Floor/Layer determines the height of placement of block
+	using shortcut key (Page Up,Page Down) you can increase or decrease
+	the layer by \"1\" (if you want more precision, you can manually set it in its
+	field box, there you can set it as a multiple of \"0.1\"[/color]
+
+	
+Tools:[color=white]
+	You can set them in the \"Options tab\"[/color]
+	
+1.	Draw Tool:[color=white]
+		It will place a block where your Cursor is currently at. It will also remove a
+		block if there is already a block there (one click for one block)[/color]
+
+2.	Eraser Tool:[color=white]
+		While pressing the Left Mouse Button, it will start erasing the blocks.
+		(The Cursor should be placed in the same layer as the blocks you which
+		to erase.[/color]
+		
+3.	Dropper Tool:[color=white]
+		If a block is already placed at the cursor position then the block material
+		will be copied, else a new block will be created (one click for one block)[/color]
+
+3.	Paint Tool:[color=white]
+		If a block is present at cursor position, it will be painted according to the
+		color and texture selected [color=silver](experimental)[/color][/color]
+
+Scaling/Rotating the brush:[color=white]
+	Furthermore, you can Scale (0.1 - 1.0) and Rotate(0 - 360 degrees) in the \"Options tab\".[/color]
+[color=aqua]
+[center]For better understanding, i have also included some examples with this program. I hope that this program or the examples will be of some use.[center]
+"
+text = "
+Made by :	\"Variable\"
+
+Changes/Additions since version 1.0:		
+	1.	Some bug fixes (usual)
+	2.	Added alert panels (New)
+	3.	An option in help menu to post an Issue (New)
+	4.	Added undo/redo (New)
+	5.	Added a new \"Paint\" tool (New)
+	6.	Added some minecraft textures (since ver: 1.0)
+	7.	You can now use your own Textures. The texture should be a 
+		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
+		 columns) an example texture is given with the software. (since ver: 1.0) 
+
+Instructions:	
+	This program is a block based 3d modeler for creating simple assets, It is made using Godot and at the moment, comes with the following tools:
+		1.	Draw tool
+		2.	Erase tool
+		3.	Dropper
+		4.	Paint
+	
+Navigation:
+	You can navigate in the 3d view by using:
+	1.	Arrow keys to move (Simple movement)
+	2.	Shift + Arrow keys to rotate and move (Left-Right to rotate, Up-Down to
+			move camera up or down)
+	3.	Right Mouse Button to rotate camera.
+	
+Floor/Layers:
+	value (-1 to 100)
+	The value of Floor/Layer determines the height of placement of block
+	using shortcut key (Page Up,Page Down) you can increase or decrease
+	the layer by \"1\" (if you want more precision, you can manually set it in its
+	field box, there you can set it as a multiple of \"0.1\"
+
+	
+Tools:
+	You can set them in the \"Options tab\"
+	
+1.	Draw Tool:
+		It will place a block where your Cursor is currently at. It will also remove a
+		block if there is already a block there (one click for one block)
+
+2.	Eraser Tool:
+		While pressing the Left Mouse Button, it will start erasing the blocks.
+		(The Cursor should be placed in the same layer as the blocks you which
+		to erase.
+		
+3.	Dropper Tool:
+		If a block is already placed at the cursor position then the block material
+		will be copied, else a new block will be created (one click for one block)
+
+3.	Paint Tool:
+		If a block is present at cursor position, it will be painted according to the
+		color and texture selected (experimental)
+
+Scaling/Rotating the brush:
+	Furthermore, you can Scale (0.1 - 1.0) and Rotate(0 - 360 degrees) in the \"Options tab\".
+
+For better understanding, i have also included some examples with this program. I hope that this program or the examples will be of some use.
+"
+
+[connection signal="value_changed" from="VBoxContainer/transf options/button container/Snap/snap" to="." method="_on_snap_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/transf options/button container/layer/layer" to="." method="_on_layer_value_changed"]
+[connection signal="toggled" from="VBoxContainer/down/Panel/TabContainer/Main/AssistMode" to="." method="_on_AssistMode_toggled"]
+[connection signal="color_changed" from="VBoxContainer/down/Panel/TabContainer/Color/CurrentColor" to="." method="_on_CurrentColor_color_changed"]
+[connection signal="pressed" from="VBoxContainer/down/Panel/TabContainer/Color/VBoxContainer/CreateNew" to="." method="_on_CreateNew_pressed"]
+[connection signal="item_selected" from="VBoxContainer/down/Panel/TabContainer/Options/Mode/Mode" to="." method="_on_Mode_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label/scale x" to="." method="_on_scale_x_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label2/scale y" to="." method="_on_scale_y_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Scale/Label3/scale z" to="." method="_on_scale_z_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label/rotate x" to="." method="_on_rotate_x_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label2/rotate y" to="." method="_on_rotate_y_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/down/Panel/TabContainer/Options/Rotate/Label3/rotate z" to="." method="_on_rotate_z_value_changed"]
+[connection signal="mouse_entered" from="VBoxContainer/down/Drawable area" to="." method="_on_Drawable_area_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/down/Drawable area" to="." method="_on_Drawable_area_mouse_exited"]
+[connection signal="file_selected" from="Dialogs/NewTexture" to="." method="_on_NewTexture_file_selected"]
