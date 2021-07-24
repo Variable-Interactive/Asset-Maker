@@ -843,14 +843,14 @@ Made by :	[color=blue]\"Variable\"[/color]
 
 Changes/Additions since version 1.0:		[color=white]
 [indent]1.	Tabs have icons [color=yellow](New)[/color][/indent]
-[indent]2.	Can now draw continuosly using \"Shift + Left Mouse Button\" [color=yellow](New)[/color][/indent]
-[indent]1.	Some bug fixes [color=grey](usual)[/color][/indent]
-[indent]2.	Added alert panels [color=fuchsia](since ver: 1.1)[/color][/indent]
-[indent]3.	An option in help menu to post an Issue [color=fuchsia](since ver: 1.1)[/color][/indent]
-[indent]4.	Added undo/redo [color=fuchsia](since ver: 1.1)[/color][/indent]
-[indent]5.	Added a new \"Paint\" tool [color=fuchsia](since ver: 1.1)[/color][/indent]
-[indent]6.	Added some minecraft textures [color=fuchsia](since ver: 1.0)[/color][/indent]
-[indent]7.	You can now use your own Textures. The texture should be a 
+[indent]2.	Can now draw continuously by using \"Shift + Left Mouse Button\" [color=yellow](New)[/color][/indent]
+[indent]3.	Some bug fixes [color=grey](usual)[/color][/indent]
+[indent]4.	Added alert panels [color=fuchsia](since ver: 1.1)[/color][/indent]
+[indent]5.	An option in help menu to post an Issue [color=fuchsia](since ver: 1.1)[/color][/indent]
+[indent]6.	Added undo/redo [color=fuchsia](since ver: 1.1)[/color][/indent]
+[indent]7.	Added a new \"Paint\" tool [color=fuchsia](since ver: 1.1)[/color][/indent]
+[indent]8.	Added some minecraft textures [color=fuchsia](since ver: 1.0)[/color][/indent]
+[indent]9.	You can now use your own Textures. The texture should be a 
 		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
 		 columns) an example texture is given with the software. [color=fuchsia](since ver: 1.0)[/color][/indent] [/color]
 
@@ -906,14 +906,14 @@ Made by :	\"Variable\"
 
 Changes/Additions since version 1.0:		
 	1.	Tabs have icons (New)
-	2.	Can now draw continuosly using \"Shift + Left Mouse Button\" (New)
-	1.	Some bug fixes (usual)
-	2.	Added alert panels (since ver: 1.1)
-	3.	An option in help menu to post an Issue (since ver: 1.1)
-	4.	Added undo/redo (since ver: 1.1)
-	5.	Added a new \"Paint\" tool (since ver: 1.1)
-	6.	Added some minecraft textures (since ver: 1.0)
-	7.	You can now use your own Textures. The texture should be a 
+	2.	Can now draw continuously by using \"Shift + Left Mouse Button\" (New)
+	3.	Some bug fixes (usual)
+	4.	Added alert panels (since ver: 1.1)
+	5.	An option in help menu to post an Issue (since ver: 1.1)
+	6.	Added undo/redo (since ver: 1.1)
+	7.	Added a new \"Paint\" tool (since ver: 1.1)
+	8.	Added some minecraft textures (since ver: 1.0)
+	9.	You can now use your own Textures. The texture should be a 
 		(1023 x 1024) image made of \"6\" (341 x 512) images (2 rows and 3
 		 columns) an example texture is given with the software. (since ver: 1.0) 
 
