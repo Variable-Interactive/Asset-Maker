@@ -1,0 +1,103 @@
+newmtl [SpatialMaterial:2223]
+Kd 1 1 1
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2226]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2229]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2232]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2235]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2238]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2241]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2244]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2247]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2250]
+Kd 0.996078 0.988235 0.988235
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane0.png
+newmtl [SpatialMaterial:2253]
+Kd 0 0 0
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2256]
+Kd 0.992157 0.984314 0.984314
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2259]
+Kd 0.992157 0.984314 0.984314
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2262]
+Kd 0.141176 0.113725 0.470588
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2265]
+Kd 0.141176 0.113725 0.470588
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2271]
+Kd 0.015686 0.015686 0.015686
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2274]
+Kd 0.015686 0.015686 0.015686
+Ke 0 0 0
+d 1
+newmtl [SpatialMaterial:2277]
+Kd 0.968627 0.945098 0.945098
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane1.png
+newmtl [SpatialMaterial:2280]
+Kd 0.968627 0.945098 0.945098
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane1.png
+newmtl [SpatialMaterial:2283]
+Kd 0.968627 0.945098 0.945098
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane1.png
+newmtl [SpatialMaterial:2286]
+Kd 0.968627 0.945098 0.945098
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane2.png
+newmtl [SpatialMaterial:2289]
+Kd 0.968627 0.945098 0.945098
+Ke 0 0 0
+d 1
+map_Kd /home/variable/Documents/Godot/Godot Archive/Pc softwares/asset maker (ver 0.1)/linux 64-bit/plane/plane2.png

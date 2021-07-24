@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/SIsilicon.3d.text/label_3d.gd" type="Script" id=1]
+
+[node name="Node" type="Node"]
+
+[node name="Spatial" type="KinematicBody" parent="."]
+visible = false
+
+[node name="line1" type="Spatial" parent="Spatial"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -0.635559, 1.34066, 0.00537625 )
+script = ExtResource( 1 )
+text = "/"
+text_size = 1.0
+font = null
+align = 0
+color = Color( 0.984314, 0.976471, 0.976471, 1 )
+metallic = 0.0
+roughness = 0.5
+emission_color = Color( 1, 1, 1, 1 )
+emission_strength = 0.0
+extrude = 0.0
+max_steps = 256
+step_size = 1.0
+
+[node name="line2" type="Spatial" parent="Spatial"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.99606, 2.09257, -0.00537625 )
+script = ExtResource( 1 )
+text = "__________"
+text_size = 1.0
+font = null
+align = 0
+color = Color( 0.996078, 0.988235, 0.988235, 1 )
+metallic = 0.0
+roughness = 0.5
+emission_color = Color( 1, 1, 1, 1 )
+emission_strength = 0.0
+extrude = 0.0
+max_steps = 256
+step_size = 1.0
+
+[node name="Coordinates" type="Spatial" parent="Spatial"]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.87723, 2.4188, -0.00483492 )
+script = ExtResource( 1 )
+text = "(0, 0, 0)"
+text_size = 1.0
+font = null
+align = 0
+color = Color( 0.666667, 0.666667, 0.309804, 1 )
+metallic = 0.0
+roughness = 0.5
+emission_color = Color( 0.196078, 0.0745098, 0.0745098, 1 )
+emission_strength = 2.57
+extrude = 0.0
+max_steps = 256
+step_size = 1.0
