@@ -14,6 +14,17 @@ var prog_dialog :Popup
 
 var hold = true # controls pausing of editor
 
+func reset_values():
+	assist_mode = false
+	layer_no = 0
+	snapping = 2
+	paint_color = Color.white
+	paint_texture = null
+	mode = "Draw"
+	alert_dialog = null
+	prog_dialog = null
+
+
 func pop_error(var text:String, var code: String):
 	alert_dialog.window_title = "Error..."
 	alert_dialog.get_node("Panel/Control/Label").text = str(text, "\n Code: ", code).c_unescape()

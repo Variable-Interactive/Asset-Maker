@@ -109,6 +109,7 @@ func _on_CreateNew_pressed():
 
 func file_menu(id :int):
 	if id == 0:
+		Global.reset_values()
 		var _error = get_tree().reload_current_scene()
 	elif id == 1:
 		save_dialog.popup_centered()
