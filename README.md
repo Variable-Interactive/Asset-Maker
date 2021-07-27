@@ -16,7 +16,6 @@ Hello Everyone!!!</h2>
   &nbsp; 1.&nbsp; Draw tool<br>
   &nbsp; 2.&nbsp; Erase tool<br>
   &nbsp; 3.&nbsp; Dropper<br>
-  &nbsp; 4.&nbsp; Draw tool<br>
   &nbsp; 5.&nbsp; Paint tool<br></p>
 <h4>Navigation:</h4>
 <p>&nbsp; You can navigate in the 3d view by using:<br>
