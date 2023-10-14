@@ -1,174 +1,122 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=8 format=3 uid="uid://c44hhld82bpp2"]
 
-[ext_resource path="res://assets/Splash/SplashDialog.gd" type="Script" id=1]
-[ext_resource path="res://assets/Splash/image.png" type="Texture" id=2]
-[ext_resource path="res://assets/Splash/github_32px.png" type="Texture" id=4]
-[ext_resource path="res://assets/Splash/Youtube.png" type="Texture" id=5]
-[ext_resource path="res://assets/Splash/Twitter.png" type="Texture" id=6]
-[ext_resource path="res://assets/fonts/Roboto-Regular.tres" type="DynamicFont" id=7]
-[ext_resource path="res://assets/Splash/itch.png" type="Texture" id=8]
+[ext_resource type="Script" path="res://assets/Splash/SplashDialog.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://d1yebfmn0fsak" path="res://assets/Splash/image.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://pw1etxucim50" path="res://assets/Splash/github_32px.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dv4s354b2osrr" path="res://assets/Splash/Youtube.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://267xvq5rjpk5" path="res://assets/Splash/Twitter.png" id="6"]
+[ext_resource type="FontFile" path="res://assets/fonts/Roboto-Regular.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://c5ma1thhdtpct" path="res://assets/Splash/itch.png" id="8"]
 
-[sub_resource type="StyleBoxFlat" id=1]
-bg_color = Color( 0.215686, 0.207843, 0.219608, 0.584314 )
-border_width_top = 38
-border_width_bottom = 26
-border_color = Color( 0.490196, 0.388235, 0.572549, 0.945098 )
-corner_radius_bottom_right = 5
-corner_radius_bottom_left = 5
-expand_margin_top = 20.0
-
-[node name="SplashDialog" type="WindowDialog"]
-margin_right = 723.0
-margin_bottom = 297.0
-custom_constants/close_v_ofs = 13
-custom_constants/title_height = 10
-custom_styles/panel = SubResource( 1 )
-window_title = "Splash"
-script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="SplashDialog" type="Window"]
+position = Vector2i(0, 10)
+size = Vector2i(710, 287)
+visible = false
+wrap_controls = true
+theme_override_constants/title_height = 10
+theme_override_constants/close_v_offset = 13
+script = ExtResource("1")
 
 [node name="Contents" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(700, 0)
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 10.5858
-margin_top = 26.6568
-margin_right = -12.4142
-margin_bottom = -15.3431
-rect_min_size = Vector2( 700, 0 )
+offset_left = 10.5858
+offset_top = 26.6568
+offset_right = -12.4142
+offset_bottom = -15.3431
 alignment = 1
-__meta__ = {
-"_edit_group_": true,
-"_edit_use_anchors_": false
-}
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Contents"]
-margin_right = 700.0
-margin_bottom = 235.0
+layout_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="Contents/HBoxContainer"]
-margin_right = 335.0
-margin_bottom = 235.0
-rect_min_size = Vector2( 335, 235 )
-color = Color( 0.0588235, 0.647059, 0.690196, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
+custom_minimum_size = Vector2(335, 235)
+layout_mode = 2
+color = Color(0.0588235, 0.647059, 0.690196, 1)
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Contents/HBoxContainer/ColorRect"]
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-margin_left = -165.5
-margin_top = -115.5
-margin_right = 165.5
-margin_bottom = 115.5
+offset_left = -165.5
+offset_top = -115.5
+offset_right = 165.5
+offset_bottom = 115.5
 ratio = 1.401
 stretch_mode = 0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="SplashArt" type="TextureRect" parent="Contents/HBoxContainer/ColorRect/AspectRatioContainer"]
-margin_top = -2.62991
-margin_right = 331.0
-margin_bottom = 233.63
-texture = ExtResource( 2 )
-expand = true
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
 stretch_mode = 6
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Contents/HBoxContainer"]
-margin_left = 339.0
-margin_right = 700.0
-margin_bottom = 235.0
+layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_right = 361.0
-margin_bottom = 14.0
-custom_colors/font_color = Color( 0.129412, 0.537255, 0.929412, 1 )
+layout_mode = 2
+theme_override_colors/font_color = Color(0.129412, 0.537255, 0.929412, 1)
 text = "Support the creator:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 18.0
-margin_right = 361.0
-margin_bottom = 82.0
+layout_mode = 2
 
 [node name="Youtube" type="TextureButton" parent="Contents/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_right = 64.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture_normal = ExtResource( 5 )
-expand = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("5")
 
 [node name="Twitter" type="TextureButton" parent="Contents/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 68.0
-margin_right = 132.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture_normal = ExtResource( 6 )
-expand = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("6")
 
 [node name="Itch" type="TextureButton" parent="Contents/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 136.0
-margin_right = 200.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture_normal = ExtResource( 8 )
-expand = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("8")
 
 [node name="Github" type="TextureButton" parent="Contents/HBoxContainer/VBoxContainer/HBoxContainer"]
-margin_left = 204.0
-margin_right = 268.0
-margin_bottom = 64.0
-rect_min_size = Vector2( 64, 64 )
-texture_normal = ExtResource( 4 )
-expand = true
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture_normal = ExtResource("4")
 
 [node name="ColorRect" type="PanelContainer" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 86.0
-margin_right = 361.0
-margin_bottom = 211.0
+layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ColorRect" type="Panel" parent="Contents/HBoxContainer/VBoxContainer/ColorRect"]
-margin_left = 7.0
-margin_top = 7.0
-margin_right = 354.0
-margin_bottom = 118.0
+layout_mode = 2
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Contents/HBoxContainer/VBoxContainer/ColorRect/ColorRect"]
+layout_mode = 0
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = 8.0
-margin_top = 5.0
-margin_right = -10.0
-margin_bottom = -8.0
+offset_left = 8.0
+offset_top = 5.0
+offset_right = -10.0
+offset_bottom = -8.0
 text = "If you Like this software, please remember to rate it!
 ---Thanks---"
 
 [node name="Rate" type="Button" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 215.0
-margin_right = 361.0
-margin_bottom = 235.0
+layout_mode = 2
 text = "Rate \"Asset Maker\""
 
 [node name="CopyrightLabel" type="Label" parent="Contents"]
-margin_top = 239.0
-margin_right = 700.0
-margin_bottom = 262.0
+layout_mode = 2
 size_flags_horizontal = 3
-custom_fonts/font = ExtResource( 7 )
+theme_override_fonts/font = ExtResource("7")
 text = "©2021-present by Variable"
-align = 1
 
-[connection signal="about_to_show" from="." to="." method="_on_SplashDialog_about_to_show"]
-[connection signal="popup_hide" from="." to="." method="_on_SplashDialog_popup_hide"]
+[connection signal="about_to_popup" from="." to="." method="_on_SplashDialog_about_to_show"]
+[connection signal="close_requested" from="." to="." method="_on_close_requested"]
 [connection signal="pressed" from="Contents/HBoxContainer/VBoxContainer/HBoxContainer/Youtube" to="." method="_on_Youtube_pressed"]
 [connection signal="pressed" from="Contents/HBoxContainer/VBoxContainer/HBoxContainer/Twitter" to="." method="_on_Twitter_pressed"]
 [connection signal="pressed" from="Contents/HBoxContainer/VBoxContainer/HBoxContainer/Itch" to="." method="_on_Itch_pressed"]

@@ -1,5 +1,5 @@
-extends Camera
-export (float) var speed = 10.0
+extends Camera3D
+@export var speed: float = 10.0
 var mouse_delta :Vector2
 var sensitivity :float = 10.0
 
@@ -8,8 +8,8 @@ func _process(delta):
 		return
 
 	if Input.is_action_pressed("mouse drag"):
-		rotate_object_local(Vector3.RIGHT,deg2rad(mouse_delta.y * sensitivity * delta))
-		rotate_y(deg2rad(mouse_delta.x * sensitivity * delta))
+		rotate_object_local(Vector3.RIGHT,deg_to_rad(mouse_delta.y * sensitivity * delta))
+		rotate_y(deg_to_rad(mouse_delta.x * sensitivity * delta))
 	mouse_delta = Vector2.ZERO
 	var dir = Vector3.ZERO
 	if Input.is_action_pressed("up"):
@@ -33,13 +33,13 @@ func _process(delta):
 		dir += vect
 
 	if Input.is_action_pressed("rotate left"):
-		rotate_y(deg2rad(100 * delta))
+		rotate_y(deg_to_rad(100 * delta))
 
 	elif Input.is_action_pressed("left"):
 		dir -= transform.basis.x
 
 	if Input.is_action_pressed("rotate right"):
-		rotate_y(deg2rad(-100 * delta))
+		rotate_y(deg_to_rad(-100 * delta))
 
 	elif Input.is_action_pressed("right"):
 		dir += transform.basis.x

@@ -6,7 +6,7 @@ var layer_no = 0
 var snapping = 2
 
 var paint_color :Color
-var paint_texture :Texture
+var paint_texture :Texture2D
 var mode = "Draw"
 
 var alert_dialog :AcceptDialog
@@ -18,21 +18,21 @@ func reset_values():
 	assist_mode = false
 	layer_no = 0
 	snapping = 2
-	paint_color = Color.white
+	paint_color = Color.WHITE
 	paint_texture = null
 	mode = "Draw"
 	alert_dialog = null
 	prog_dialog = null
 
 
-func pop_error(var text:String, var code: String):
-	alert_dialog.window_title = "Error..."
+func pop_error(text:String, code: String):
+	alert_dialog.title = "Error..."
 	alert_dialog.get_node("Panel/Control/Label").text = str(text, "\n Code: ", code).c_unescape()
 	alert_dialog.popup_centered()
 
 
-func pop_success(var text:String):
-	alert_dialog.window_title = "Success!!!"
+func pop_success(text:String):
+	alert_dialog.title = "Success!!!"
 	alert_dialog.get_node("Panel/Control/Label").text = str(text).c_unescape()
 	alert_dialog.popup_centered()
 
@@ -50,7 +50,7 @@ func get_paths_in_node(parent :Node,local = false):
 		#If the path is not yet registered then add it to "paths"
 		if not child_node.get_path() in paths:
 			paths.append(child_node.get_path())
-			#if "child_node" has more further children then make child_node as the new "parent" 
+			#if "child_node" has more further children then make child_node as the new "parent"
 			if child_node.get_child_count() != 0:
 				parent = parent.get_child(child_node.get_index())
 				#and reset child_number (i set it to "-1" because later it will be added
@@ -71,13 +71,13 @@ func get_paths_in_node(parent :Node,local = false):
 			child_number = 0
 
 
-# it returns the first node with the given name if present or returns null if not
-func find_node_by_name(var root, name :String):
+# it returns the first node with the given node_name if present or returns null if not
+func find_node_by_name(root, node_name :String):
 	var base_node :Node = root
 	while base_node.get_parent() != null:
 		base_node = base_node.get_parent()
 	var path_array = get_paths_in_node(base_node)
 	for path in path_array:
-		if str(path).ends_with(name):
+		if str(path).ends_with(node_name):
 			return self.get_node(path)
 	return null

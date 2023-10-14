@@ -1,0 +1,92 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1697299885
+export_presets.cfg::TextFile::-1::1697294889::0::1::::<><>::
+Main.gd::GDScript::-1::1697299536::0::1::::<>Node3D<>::
+Main.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://Main.gd<>res://UI/Interface.tscn<>res://shaders/cursor.gdshader<>res://Environments/dark.tres<>res://UI/Scripts/Camera.gd<>res://shaders/layer.tres<>res://UI/Scripts/CSGCombiner.gd
+README.md::TextFile::-1::1697294889::0::1::::<><>::
+Startup.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://assets/icons/monogram transparent.png<>res://assets/audio/boot_up_2.ogg
+::res://assets/::1697294889
+::res://assets/audio/::1697297644
+boot_up.ogg::AudioStreamOggVorbis::4428034155676575324::1697294889::1697297644::1::::<><>::
+boot_up_2.ogg::AudioStreamOggVorbis::1883387523391172477::1697294889::1697297644::1::::<><>::
+::res://assets/fonts/::1697297644
+Roboto-Regular.tres::FontFile::-1::1697297624::0::1::::<><>::res://assets/fonts/Roboto-Regular.ttf
+Roboto-Regular.ttf::FontFile::7199542608552614852::1697294889::1697297644::1::::<><>::
+::res://assets/icons/::1697297644
+3d-rotate.png::CompressedTexture2D::3608808064931254899::1697294889::1697297644::1::::<><>::
+arrow.png::CompressedTexture2D::5704944802661609644::1697294889::1697297644::1::::<><>::
+icon.png::CompressedTexture2D::5265971608849986207::1697294889::1697297644::1::::<><>::
+layers.png::CompressedTexture2D::2417706657273210165::1697294889::1697297644::1::::<><>::
+left mouse.png::CompressedTexture2D::691718614245299304::1697294889::1697297644::1::::<><>::
+monogram transparent.png::CompressedTexture2D::4132440110447340704::1697294889::1697297644::1::::<><>::
+move.png::CompressedTexture2D::5747877973972895079::1697294889::1697297644::1::::<><>::
+right mouse.png::CompressedTexture2D::4802448104582159855::1697294889::1697297644::1::::<><>::
+shift.png::CompressedTexture2D::4512052993333656445::1697294889::1697297644::1::::<><>::
+tab_icon0.png::CompressedTexture2D::379131535901787666::1697294889::1697297644::1::::<><>::
+tab_icon1.png::CompressedTexture2D::554844153856906645::1697294889::1697297644::1::::<><>::
+tab_icon2.png::CompressedTexture2D::6563968401353302039::1697294889::1697297644::1::::<><>::
+::res://assets/Splash/::1697299816
+boot up.png::CompressedTexture2D::5198472877355125657::1697294889::1697297644::1::::<><>::
+github_32px.png::CompressedTexture2D::1099835784533213285::1697294889::1697297644::1::::<><>::
+image.png::CompressedTexture2D::9033961987309240490::1697294889::1697297644::1::::<><>::
+itch.png::CompressedTexture2D::6903326649297523067::1697294889::1697297644::1::::<><>::
+SplashDialog.gd::GDScript::-1::1697299592::0::1::::<>Window<>::
+SplashDialog.tscn::PackedScene::6868622891190346349::1697299816::0::1::::<><>::res://assets/Splash/SplashDialog.gd<>uid://d1yebfmn0fsak::::res://assets/Splash/image.png<>uid://pw1etxucim50::::res://assets/Splash/github_32px.png<>uid://dv4s354b2osrr::::res://assets/Splash/Youtube.png<>uid://267xvq5rjpk5::::res://assets/Splash/Twitter.png<>res://assets/fonts/Roboto-Regular.tres<>uid://c5ma1thhdtpct::::res://assets/Splash/itch.png
+Twitter.png::CompressedTexture2D::1961079634724442438::1697294889::1697297644::1::::<><>::
+Youtube.png::CompressedTexture2D::8694239251026770715::1697294889::1697297644::1::::<><>::
+::res://assets/themes/::1697294889
+::res://assets/themes/dark/::1697295279
+theme.tres::Theme::-1::1697297624::0::1::::<><>::res://assets/fonts/Roboto-Regular.tres
+::res://Brushes/::1697294889
+::res://Brushes/Basic/::1697297644
+brush.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://UI/Scripts/BrushBlock.gd
+BrushPosition.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://assets/fonts/Roboto-Regular.ttf
+Coat.png::CompressedTexture2D::3310358247674553787::1697294889::1697297644::1::::<><>::
+Dirt.png::CompressedTexture2D::9208560017777819626::1697294889::1697297644::1::::<><>::
+Glass.png::CompressedTexture2D::4428730597565401695::1697294889::1697297644::1::::<><>::
+Gold.png::CompressedTexture2D::1447081684373140265::1697294889::1697297644::1::::<><>::
+Redstone.png::CompressedTexture2D::7361924043436773921::1697294889::1697297644::1::::<><>::
+Sand.png::CompressedTexture2D::6559655590124059368::1697294889::1697297644::1::::<><>::
+Stone.png::CompressedTexture2D::1575149023185965572::1697294889::1697297644::1::::<><>::
+textures_1.png::CompressedTexture2D::638830393340934480::1697294889::1697297644::1::::<><>::
+textures_2.png::CompressedTexture2D::7538472836928240343::1697294889::1697297644::1::::<><>::
+textures_3.png::CompressedTexture2D::1253582209882825786::1697294889::1697297644::1::::<><>::
+textures_4.png::CompressedTexture2D::7012625533936195526::1697294889::1697297644::1::::<><>::
+textures_5.png::CompressedTexture2D::1640104258625164521::1697294889::1697297644::1::::<><>::
+Wood.png::CompressedTexture2D::7223459551561205781::1697294889::1697297644::1::::<><>::
+::res://Environments/::1697299816
+dark.tres::Environment::-1::1697297624::0::1::::<><>::
+Sky.tres::Environment::8752836847817641441::1697299816::0::1::::<><>::
+::res://Examples/::1697294889
+::res://Examples/Example texture/::1697297644
+base texture.png::CompressedTexture2D::678759351904070332::1697294889::1697297644::1::::<><>::
+example texture.png::CompressedTexture2D::8794878580644406618::1697294889::1697297644::1::::<><>::
+::res://Examples/obj/::1697294889
+::res://Examples/obj/plane/::1697297645
+plane0.png::CompressedTexture2D::4816626972081485226::1697294889::1697297644::1::::<><>::
+plane1.png::CompressedTexture2D::208774827687288954::1697294889::1697297644::1::::<><>::
+plane2.png::CompressedTexture2D::6892180791272501298::1697294889::1697297644::1::::<><>::
+plane.obj::Mesh::359095471246257212::1697294889::1697297645::1::::<><>::
+Read ME!.txt::TextFile::-1::1697294889::0::1::::<><>::
+View Me!.png::CompressedTexture2D::8241821964097905374::1697294889::1697297645::1::::<><>::
+::res://Examples/Projects/::1697294889
+::res://shaders/::1697299816
+cursor.gdshader::Shader::-1::1697299816::0::1::::<><>::
+cursor.tres::ShaderMaterial::-1::1697297624::0::1::::<><>::res://shaders/cursor.gdshader
+layer.gdshader::Shader::-1::1697299816::0::1::::<><>::
+layer.tres::ShaderMaterial::-1::1697297624::0::1::::<><>::res://shaders/layer.gdshader
+::res://UI/::1697296726
+Interface.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://UI/Scripts/Texture2D button/TextureButton.gd<>res://assets/icons/right mouse.png<>res://assets/icons/icon.png<>res://assets/icons/monogram transparent.png<>res://UI/Scripts/Interface.gd<>res://Brushes/Basic/textures_1.png<>res://assets/icons/move.png<>res://assets/icons/shift.png<>res://assets/themes/dark/theme.tres<>res://assets/icons/arrow.png<>res://UI/Scripts/layer.gd<>res://assets/icons/left mouse.png<>res://assets/Splash/SplashDialog.tscn<>res://assets/icons/layers.png<>res://UI/Scripts/Export.gd
+TextureButton.tscn::PackedScene::-1::1697297624::0::1::::<><>::res://UI/Scripts/Texture2D button/TextureButton.gd<>res://Brushes/Basic/textures_5.png
+::res://UI/Scripts/::1697299885
+BrushBlock.gd::GDScript::-1::1697297624::0::1::::<>CSGMesh3D<>::
+Camera.gd::GDScript::-1::1697299816::0::1::::<>Camera3D<>::
+CSGCombiner.gd::GDScript::-1::1697298903::0::1::::<>CSGCombiner3D<>::
+Export.gd::GDScript::-1::1697298672::0::1::::<>MenuButton<>::
+Interface.gd::GDScript::-1::1697298480::0::1::::<>Control<>::
+layer.gd::GDScript::-1::1697297624::0::1::::<>TextureRect<>::
+::res://UI/Scripts/Autoload/::1697298480
+Global.gd::GDScript::-1::1697298480::0::1::::<>Node<>::
+::res://UI/Scripts/Texture2D button/::1697294889
+TextureButton.gd::GDScript::-1::1697297624::0::1::::<>TextureButton<>::
+::res://UI/Scripts/Texture button/::0

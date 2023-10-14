@@ -3,7 +3,7 @@ extends TextureButton
 signal button_texture(texture)
 
 func _ready():
-	var _error = connect("pressed",self,"butt_pressed")
+	var _error = connect("pressed", Callable(self, "butt_pressed"))
 
 func butt_pressed():
 	emit_signal("button_texture",texture_normal)

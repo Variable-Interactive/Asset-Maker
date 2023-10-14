@@ -1,0 +1,13 @@
+res://Environments/Sky.tres
+res://assets/Splash/SplashDialog.tscn
+res://shaders/cursor.gdshader
+res://shaders/layer.gdshader
+res://UI/Scripts/Camera.gd
+res://Main.tscn
+res://assets/themes/dark/theme.tres
+res://UI/Interface.tscn
+res://assets/Splash/SplashDialog.gd
+res://Main.gd
+res://Environments/dark.tres
+res://shaders/layer.tres
+res://UI/Scripts/Autoload/Global.gd
