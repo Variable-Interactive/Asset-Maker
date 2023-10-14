@@ -32,7 +32,7 @@ func _ready():
 	Global.alert_dialog = alert_dialog
 	start_texture_tab()
 	start_tab_icons()
-	
+
 	for butts in texture_container.get_children():
 		butts.connect("button_texture",self,"set_texture")
 	menu_buttons.get_node("File").get_popup().connect("index_pressed", self, "file_menu")
@@ -82,14 +82,14 @@ func _on_NewTexture_file_selected(path):
 	var image = Image.new()
 	image.load(path)
 	image.resize(1023,1024)
-	
+
 	var img_texture := ImageTexture.new()
 	img_texture.create_from_image(image)
-	
+
 	var new_texture = preload("res://UI/TextureButton.tscn").instance()
 	new_texture.texture_normal = img_texture
 	texture_container.add_child(new_texture)
-	
+
 	new_texture.connect("button_texture",self,"set_texture")
 
 

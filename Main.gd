@@ -24,6 +24,9 @@ var do_bin :Array = []
 
 
 func _ready():
+	OS.set_window_maximized(true)
+	yield(get_tree(), "idle_frame")
+
 	splash_dialog.popup()
 
 	Global.paint_texture = current_texture.texture
@@ -65,7 +68,7 @@ func _physics_process(_delta):
 			else:
 				if Input.is_action_just_pressed("left click"):
 					paint(cursor.global_transform, Global.paint_color, Global.paint_texture, CubeMesh.new())
-	
+
 		elif Global.mode == "Erase":
 			if Input.is_action_pressed("left click"):
 				paint(cursor.global_transform, Global.paint_color, Global.paint_texture, CubeMesh.new())
@@ -87,7 +90,7 @@ func paint(var transform, var color, var texture, var shape):
 			current_color.color = color
 			current_texture.texture = texture
 			return
-		
+
 		elif Global.mode == "Paint":
 			if texture != item.material.albedo_texture || color != item.material.albedo_color:
 				var paint_mat = SpatialMaterial.new()
@@ -130,10 +133,10 @@ func paint(var transform, var color, var texture, var shape):
 	brush_material.albedo_color = color
 	brush.material = brush_material
 	brush.mesh = shape
-	
+
 	var old_existing_blocks = existing_blocks.duplicate(true)
 	existing_blocks.append(transform.origin)
-	
+
 	undo_redo.create_action("draw")
 	undo_redo.add_do_method(self, "add_in_do_bin", [brush, brush.material, transform, "Display"])
 	undo_redo.add_undo_method(self, "add_in_undo_bin")
@@ -148,7 +151,7 @@ func add_in_do_bin(value):
 	do_bin.append(value)
 	if !undo_bin.empty():
 		undo_bin.remove(undo_bin.size() - 1)
-	
+
 	# make a copy of orignal to display visually if display is intended
 	if do_bin[do_bin.size()-1][3] == "Display":
 		var brush :CSGMesh = do_bin[do_bin.size()-1][0].duplicate()
@@ -165,7 +168,7 @@ func add_in_do_bin(value):
 			do_bin[do_bin.size()-1][0] = do_bin[do_bin.size()-1][0].duplicate()
 			visual_alternatives[do_bin[do_bin.size()-1][4]].queue_free()
 			visual_alternatives.remove(do_bin[do_bin.size()-1][4])
-	
+
 	#if paint is intended, we will paint new material at the given index
 	#[item.get_index(), old_mat, paint_mat, "Paint"]
 	elif do_bin[do_bin.size()-1][3] == "Paint":
@@ -192,7 +195,7 @@ func add_in_undo_bin():
 		visual_alternatives.insert(undo_bin[undo_bin.size()-1][4], brush)
 		canvas.add_child(brush)
 		canvas.move_child(brush, undo_bin[undo_bin.size()-1][4])
-	
+
 	#if paint was intended, so as this is "UNDO" we will paint the orignal material back
 	#[item.get_index(), old_mat, paint_mat, "Paint"]
 	elif undo_bin[undo_bin.size()-1][3] == "Paint":

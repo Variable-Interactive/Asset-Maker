@@ -1,12 +1,11 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/Splash/SplashDialog.gd" type="Script" id=1]
 [ext_resource path="res://assets/Splash/image.png" type="Texture" id=2]
-[ext_resource path="res://assets/themes/dark/theme.tres" type="Theme" id=3]
 [ext_resource path="res://assets/Splash/github_32px.png" type="Texture" id=4]
 [ext_resource path="res://assets/Splash/Youtube.png" type="Texture" id=5]
 [ext_resource path="res://assets/Splash/Twitter.png" type="Texture" id=6]
-[ext_resource path="res://assets/fonts/Roboto-Small.tres" type="DynamicFont" id=7]
+[ext_resource path="res://assets/fonts/Roboto-Regular.tres" type="DynamicFont" id=7]
 [ext_resource path="res://assets/Splash/itch.png" type="Texture" id=8]
 
 [sub_resource type="StyleBoxFlat" id=1]
@@ -20,11 +19,10 @@ expand_margin_top = 20.0
 
 [node name="SplashDialog" type="WindowDialog"]
 margin_right = 723.0
-margin_bottom = 288.0
-theme = ExtResource( 3 )
-custom_styles/panel = SubResource( 1 )
+margin_bottom = 297.0
 custom_constants/close_v_ofs = 13
 custom_constants/title_height = 10
+custom_styles/panel = SubResource( 1 )
 window_title = "Splash"
 script = ExtResource( 1 )
 __meta__ = {
@@ -92,14 +90,14 @@ size_flags_horizontal = 3
 
 [node name="Label" type="Label" parent="Contents/HBoxContainer/VBoxContainer"]
 margin_right = 361.0
-margin_bottom = 31.0
+margin_bottom = 14.0
 custom_colors/font_color = Color( 0.129412, 0.537255, 0.929412, 1 )
 text = "Support the creator:"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 35.0
+margin_top = 18.0
 margin_right = 361.0
-margin_bottom = 99.0
+margin_bottom = 82.0
 
 [node name="Youtube" type="TextureButton" parent="Contents/HBoxContainer/VBoxContainer/HBoxContainer"]
 margin_right = 64.0
@@ -132,32 +130,30 @@ rect_min_size = Vector2( 64, 64 )
 texture_normal = ExtResource( 4 )
 expand = true
 
-[node name="ColorRect" type="ColorRect" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 103.0
+[node name="ColorRect" type="PanelContainer" parent="Contents/HBoxContainer/VBoxContainer"]
+margin_top = 86.0
 margin_right = 361.0
-margin_bottom = 200.0
+margin_bottom = 211.0
 size_flags_vertical = 3
-color = Color( 0.905882, 0.87451, 0.109804, 1 )
 
-[node name="ColorRect" type="ColorRect" parent="Contents/HBoxContainer/VBoxContainer/ColorRect"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = 4.0
-margin_top = 5.0
-margin_right = -3.0
-margin_bottom = -5.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="ColorRect" type="Panel" parent="Contents/HBoxContainer/VBoxContainer/ColorRect"]
+margin_left = 7.0
+margin_top = 7.0
+margin_right = 354.0
+margin_bottom = 118.0
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Contents/HBoxContainer/VBoxContainer/ColorRect/ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-text = "If you Like this software, please remember to rate it...
+margin_left = 8.0
+margin_top = 5.0
+margin_right = -10.0
+margin_bottom = -8.0
+text = "If you Like this software, please remember to rate it!
 ---Thanks---"
 
 [node name="Rate" type="Button" parent="Contents/HBoxContainer/VBoxContainer"]
-margin_top = 204.0
+margin_top = 215.0
 margin_right = 361.0
 margin_bottom = 235.0
 text = "Rate \"Asset Maker\""
@@ -165,7 +161,7 @@ text = "Rate \"Asset Maker\""
 [node name="CopyrightLabel" type="Label" parent="Contents"]
 margin_top = 239.0
 margin_right = 700.0
-margin_bottom = 260.0
+margin_bottom = 262.0
 size_flags_horizontal = 3
 custom_fonts/font = ExtResource( 7 )
 text = "©2021-present by Variable"

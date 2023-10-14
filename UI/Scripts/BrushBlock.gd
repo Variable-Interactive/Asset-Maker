@@ -9,7 +9,7 @@ func start_up(block_transform :Transform):
 
 
 func _process(_delta):
-	
+
 	if Global.assist_mode:
 		if (global_transform.origin.distance_to(cursor.global_transform.origin)) <= 1.5:
 			if get_node_or_null("Node") == null:
@@ -22,7 +22,7 @@ func _process(_delta):
 						get_node("Node/Spatial/Coordinates").emission_color = Color(1, 1, 1)
 						get_node("Node/Spatial/Coordinates").color = Color(0, 0, 0)
 				get_node("Node/Spatial/Coordinates").text = str(global_transform.origin)
-			
+
 			var coordinates :KinematicBody = get_node("Node/Spatial")
 			var look_dir :Vector3 = get_node("../../Camera").global_transform.origin
 			look_dir.y = coordinates.global_transform.origin.y
